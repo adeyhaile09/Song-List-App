@@ -1,11 +1,7 @@
 FROM node:16
-
-COPY . .
-
+WORKDIR /app
 COPY package*.json ./
-
-RUN npm install
-
-EXPOSE 8080
+COPY ./ ./
+RUN npm i
 
 CMD ["npm", "run", "start"]
